@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+<meta name="description" content="Track job applications, recruitment stages, and upcoming interviews with JobTrack.">
+  <title>Dashboard | JobTrack</title>
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-logo" href="index.html" aria-label="JobTrack home">JobTrack</a>
+    <nav class="primary-navigation" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html" aria-current="page">Dashboard</a></li>
+        <li><a href="applications.html">Applications</a></li>
+        <li><a href="add-application.html">Add Application</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <h1>Job Application Dashboard</h1>
+
+    <section id="application-summary" aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Application Summary</h2>
+      <dl class="summary-cards">
+        <div class="summary-card"><dt>Total Applications</dt><dd id="total-applications">â€”</dd></div>
+        <div class="summary-card"><dt>Applied</dt><dd id="applied-count">â€”</dd></div>
+        <div class="summary-card"><dt>Shortlisted</dt><dd id="shortlisted-count">â€”</dd></div>
+        <div class="summary-card"><dt>Online Assessment</dt><dd id="online-assessment-count">â€”</dd></div>
+        <div class="summary-card"><dt>Interviews</dt><dd id="interviews-count">â€”</dd></div>
+        <div class="summary-card"><dt>Offers</dt><dd id="offers-count">â€”</dd></div>
+        <div class="summary-card"><dt>Rejected</dt><dd id="rejected-count">â€”</dd></div>
+        <div class="summary-card"><dt>Withdrawn</dt><dd id="withdrawn-count">â€”</dd></div>
+      </dl>
+    </section>
+
+    <section id="recent-applications" aria-labelledby="recent-applications-heading">
+      <h2 id="recent-applications-heading">Recent Applications</h2>
+      <p id="recent-applications-empty" class="empty-state" hidden>No applications yet. <a href="add-application.html">Add your first application</a>.</p>
+      <div class="table-container">
+        <table id="recent-applications-table">
+          <caption>Recently updated job applications</caption>
+          <thead><tr><th scope="col">Company</th><th scope="col">Job Role</th><th scope="col">Source/Portal</th><th scope="col">Status</th><th scope="col">Application Date</th><th scope="col">Actions</th></tr></thead>
+          <tbody id="recent-applications-list"><!-- Application rows are populated from the API. --></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="upcoming-interviews" aria-labelledby="upcoming-interviews-heading">
+      <h2 id="upcoming-interviews-heading">Upcoming Interviews</h2>
+      <p id="upcoming-interviews-empty" class="empty-state" hidden>No upcoming interviews.</p>
+      <div class="table-container">
+        <table id="upcoming-interviews-table">
+          <caption>Scheduled upcoming interviews</caption>
+          <thead><tr><th scope="col">Company</th><th scope="col">Role</th><th scope="col">Interview Date</th><th scope="col">Interview Type</th><th scope="col">Status</th></tr></thead>
+          <tbody id="upcoming-interviews-list"><!-- Interview rows are populated from the API. --></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="application-statistics" aria-labelledby="statistics-heading">
+      <h2 id="statistics-heading">Application Statistics</h2>
+      <div class="statistics-grid">
+        <article class="statistics-panel" aria-labelledby="status-chart-heading"><h3 id="status-chart-heading">Applications by Status</h3><div id="applications-by-status-chart" class="chart-placeholder" role="img" aria-label="Applications by status chart will appear here">Chart placeholder</div></article>
+        <article class="statistics-panel" aria-labelledby="portal-chart-heading"><h3 id="portal-chart-heading">Applications by Job Portal</h3><div id="applications-by-portal-chart" class="chart-placeholder" role="img" aria-label="Applications by job portal chart will appear here">Chart placeholder</div></article>
+        <article class="statistics-panel" aria-labelledby="conversion-rate-heading"><h3 id="conversion-rate-heading">Interview Conversion Rate</h3><div id="interview-conversion-rate" class="statistics-value" aria-live="polite">â€”</div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>JobTrack â€“ Smart Job Application Tracker</p>
+    <p>Built with HTML, CSS, JavaScript, Spring Boot &amp; MySQL</p>
+  </footer>
+  <script src="js/app.js" defer></script>
+</body>
+</html>

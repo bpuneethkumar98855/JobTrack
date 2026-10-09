@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+<meta name="description" content="View job application details and recruitment progress in JobTrack.">
+  <title>Application Details | JobTrack</title>
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-logo" href="index.html" aria-label="JobTrack home">JobTrack</a>
+    <nav class="primary-navigation" aria-label="Main navigation"><ul>
+      <li><a href="index.html">Dashboard</a></li><li><a href="applications.html">Applications</a></li><li><a href="add-application.html">Add Application</a></li>
+    </ul></nav>
+  </header>
+
+  <main id="main-content">
+    <article id="application-details" data-application-id="">
+      <header class="page-heading"><h1 id="detail-job-role">Job Role</h1><p id="detail-company-name">Company Name</p></header>
+      <section aria-labelledby="application-information-heading">
+        <h2 id="application-information-heading">Application Information</h2>
+        <dl class="application-details-list">
+          <dt>Location</dt><dd id="detail-location">Not provided</dd>
+          <dt>Job Portal</dt><dd id="detail-source">Not provided</dd>
+          <dt>Job URL</dt><dd id="detail-job-url">Not provided</dd>
+          <dt>Application Date</dt><dd id="detail-application-date">Not provided</dd>
+          <dt>Current Status</dt><dd id="detail-status">Not provided</dd>
+          <dt>Interview Date</dt><dd id="detail-interview-date">Not scheduled</dd>
+          <dt>Interview Type</dt><dd id="detail-interview-type">Not provided</dd>
+          <dt>Created Date</dt><dd id="detail-created-date">Not provided</dd>
+          <dt>Last Updated Date</dt><dd id="detail-updated-date">Not provided</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="status-timeline-heading">
+        <h2 id="status-timeline-heading">Application Status Timeline</h2>
+        <p id="status-history-empty" class="empty-state" hidden>No status changes have been recorded yet.</p>
+        <ol id="application-status-timeline" class="status-timeline" aria-live="polite"></ol>
+        <form id="status-update-form" class="status-update-form">
+          <div class="form-field">
+            <label for="status-update-value">Update status</label>
+            <select id="status-update-value" name="status" required>
+              <option value="applied">Applied</option><option value="shortlisted">Shortlisted</option>
+              <option value="online-assessment">Online Assessment</option><option value="coding-test">Coding Test</option>
+              <option value="technical-interview">Technical Interview</option><option value="hr-interview">HR Interview</option>
+              <option value="offer">Offer</option><option value="rejected">Rejected</option><option value="withdrawn">Withdrawn</option>
+            </select>
+            <p id="status-update-restriction" class="status-restriction-help" hidden>Rejected is unavailable because an Offer has been recorded. Choose Withdrawn if the candidate declines or leaves the process.</p>
+          </div>
+          <div class="form-field">
+            <label for="status-update-note">Note (optional)</label>
+            <textarea id="status-update-note" name="note" rows="2" maxlength="2000" placeholder="Add context for this status change"></textarea>
+          </div>
+          <button type="submit">Save Status Update</button>
+          <p id="status-update-message" role="status" aria-live="polite" hidden></p>
+        </form>
+      </section>
+
+      <section aria-labelledby="job-description-heading"><h2 id="job-description-heading">Job Description</h2><div id="detail-job-description" class="formatted-job-text">No description provided.</div></section>
+      <section aria-labelledby="required-skills-heading"><h2 id="required-skills-heading">Required Skills</h2><div id="detail-required-skills" class="formatted-job-text">No skills provided.</div></section>
+      <section aria-labelledby="application-notes-heading"><h2 id="application-notes-heading">Notes</h2><p id="detail-notes">No notes.</p></section>
+
+      <nav class="application-actions" aria-label="Application actions">
+        <a id="edit-application-link" href="edit-application.html">Edit Application</a>
+        <button id="delete-application-button" type="button">Delete Application</button>
+        <a href="applications.html">Back to Applications</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer"><p>JobTrack â€“ Smart Job Application Tracker</p><p>Built with HTML, CSS, JavaScript, Spring Boot &amp; MySQL</p></footer>
+  <script src="js/app.js" defer></script>
+</body>
+</html>

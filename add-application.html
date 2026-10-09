@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+<meta name="description" content="Add a job application to your JobTrack tracker.">
+  <title>Add Application | JobTrack</title>
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-logo" href="index.html" aria-label="JobTrack home">JobTrack</a>
+    <nav class="primary-navigation" aria-label="Main navigation"><ul>
+      <li><a href="index.html">Dashboard</a></li><li><a href="applications.html">Applications</a></li><li><a href="add-application.html" aria-current="page">Add Application</a></li>
+    </ul></nav>
+  </header>
+
+  <main id="main-content">
+    <h1>Add Application</h1>
+    <form id="add-application-form" action="/api/applications" method="post">
+      <section class="job-description-extraction" aria-labelledby="paste-job-description-heading">
+        <h2 id="paste-job-description-heading">Paste Job Description</h2>
+        <p>Paste the job description below to fill in any details the text clearly includes. You can review and edit everything before saving.</p>
+        <label for="pasted-job-description">Job description text</label>
+        <textarea id="pasted-job-description" rows="9" placeholder="Paste the job description here"></textarea>
+        <div class="extraction-controls">
+          <button id="extract-job-information" type="button">Extract Information</button>
+          <p id="extraction-message" class="extraction-message" role="status" aria-live="polite" hidden></p>
+        </div>
+      </section>
+      <fieldset>
+        <legend>Application details</legend>
+        <div class="form-field"><label for="company-name">Company Name <span aria-hidden="true">*</span></label><input id="company-name" name="companyName" type="text" autocomplete="organization" required></div>
+        <div class="form-field"><label for="job-role">Job Role <span aria-hidden="true">*</span></label><input id="job-role" name="jobRole" type="text" required></div>
+        <div class="form-field"><label for="application-date">Application Date <span aria-hidden="true">*</span></label><input id="application-date" name="applicationDate" type="date" required></div>
+        <div class="form-field"><label for="application-status">Status <span aria-hidden="true">*</span></label><select id="application-status" name="status" required><option value="applied" selected>Applied</option><option value="shortlisted">Shortlisted</option><option value="online-assessment">Online Assessment</option><option value="coding-test">Coding Test</option><option value="technical-interview">Technical Interview</option><option value="hr-interview">HR Interview</option><option value="offer">Offer</option><option value="rejected">Rejected</option><option value="withdrawn">Withdrawn</option></select></div>
+        <div class="form-field"><label for="location">Location</label><input id="location" name="location" type="text" autocomplete="address-level2"></div>
+        <div class="form-field"><label for="job-source">Job Portal/Source</label><select id="job-source" name="source"><option value="" selected>Select a source</option><option value="naukri">Naukri</option><option value="linkedin">LinkedIn</option><option value="indeed">Indeed</option><option value="internshala">Internshala</option><option value="company-website">Company Website</option><option value="other">Other</option></select></div>
+        <div class="form-field"><label for="interview-date">Interview Date</label><input id="interview-date" name="interviewDate" type="date"></div>
+        <div class="form-field"><label for="interview-type">Interview Type</label><select id="interview-type" name="interviewType"><option value="">Select an interview type</option><option value="online">Online</option><option value="phone">Phone</option><option value="in-person">In Person</option></select></div>
+        <div class="form-field"><label for="job-url">Job URL</label><input id="job-url" name="jobUrl" type="url" placeholder="https://example.com/job"></div>
+        <div class="form-field"><label for="job-description">Job Description</label><textarea id="job-description" name="jobDescription" rows="6"></textarea></div>
+        <div class="form-field"><label for="required-skills">Required Skills</label><textarea id="required-skills" name="requiredSkills" rows="3" placeholder="List skills separated by commas"></textarea></div>
+        <div class="form-field"><label for="application-notes">Notes</label><textarea id="application-notes" name="notes" rows="5"></textarea></div>
+      </fieldset>
+      <div class="form-actions"><button type="submit">Save Application</button><a href="applications.html">Cancel</a></div>
+    </form>
+  </main>
+
+  <footer class="site-footer"><p>JobTrack â€“ Smart Job Application Tracker</p><p>Built with HTML, CSS, JavaScript, Spring Boot &amp; MySQL</p></footer>
+  <script src="js/app.js" defer></script>
+</body>
+</html>

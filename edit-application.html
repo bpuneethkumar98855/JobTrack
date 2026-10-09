@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+<meta name="description" content="Edit a job application in JobTrack.">
+  <title>Edit Application | JobTrack</title>
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-logo" href="index.html" aria-label="JobTrack home">JobTrack</a>
+    <nav class="primary-navigation" aria-label="Main navigation"><ul>
+      <li><a href="index.html">Dashboard</a></li><li><a href="applications.html">Applications</a></li><li><a href="add-application.html">Add Application</a></li>
+    </ul></nav>
+  </header>
+
+  <main id="main-content">
+    <h1>Edit Application</h1>
+    <form id="edit-application-form" action="/api/applications/{id}" method="post" data-http-method="PUT" data-application-id="">
+      <input type="hidden" id="edit-application-id" name="id" value="">
+      <fieldset>
+        <legend>Application details</legend>
+        <div class="form-field"><label for="edit-company-name">Company Name <span aria-hidden="true">*</span></label><input id="edit-company-name" name="companyName" type="text" autocomplete="organization" placeholder="Company Name" required></div>
+        <div class="form-field"><label for="edit-job-role">Job Role <span aria-hidden="true">*</span></label><input id="edit-job-role" name="jobRole" type="text" placeholder="Job Role" required></div>
+        <div class="form-field"><label for="edit-location">Location</label><input id="edit-location" name="location" type="text" placeholder="Location" autocomplete="address-level2"></div>
+        <div class="form-field"><label for="edit-job-source">Job Portal</label><select id="edit-job-source" name="source"><option value="">Select a source</option><option value="naukri">Naukri</option><option value="linkedin">LinkedIn</option><option value="indeed">Indeed</option><option value="internshala">Internshala</option><option value="company-website">Company Website</option><option value="other">Other</option></select></div>
+        <div class="form-field"><label for="edit-application-date">Application Date <span aria-hidden="true">*</span></label><input id="edit-application-date" name="applicationDate" type="date" required></div>
+        <div class="form-field"><label for="edit-application-status">Status <span aria-hidden="true">*</span></label><select id="edit-application-status" name="status" required><option value="applied">Applied</option><option value="shortlisted">Shortlisted</option><option value="online-assessment">Online Assessment</option><option value="coding-test">Coding Test</option><option value="technical-interview">Technical Interview</option><option value="hr-interview">HR Interview</option><option value="offer">Offer</option><option value="rejected">Rejected</option><option value="withdrawn">Withdrawn</option></select><p id="edit-status-restriction" class="status-restriction-help" hidden>Rejected is unavailable because an Offer has been recorded. Choose Withdrawn if the candidate declines or leaves the process.</p></div>
+        <div class="form-field"><label for="edit-interview-date">Interview Date</label><input id="edit-interview-date" name="interviewDate" type="date"></div>
+        <div class="form-field"><label for="edit-interview-type">Interview Type</label><select id="edit-interview-type" name="interviewType"><option value="">Select an interview type</option><option value="online">Online</option><option value="phone">Phone</option><option value="in-person">In Person</option></select></div>
+        <div class="form-field"><label for="edit-job-url">Job URL</label><input id="edit-job-url" name="jobUrl" type="url" placeholder="https://example.com/job"></div>
+        <div class="form-field"><label for="edit-job-description">Job Description</label><textarea id="edit-job-description" name="jobDescription" rows="6" placeholder="Job Description"></textarea></div>
+        <div class="form-field"><label for="edit-required-skills">Required Skills</label><textarea id="edit-required-skills" name="requiredSkills" rows="3" placeholder="Required Skills"></textarea></div>
+        <div class="form-field"><label for="edit-application-notes">Notes</label><textarea id="edit-application-notes" name="notes" rows="5" placeholder="Notes"></textarea></div>
+      </fieldset>
+      <div class="form-actions"><button type="submit">Update Application</button><a href="applications.html">Cancel</a></div>
+    </form>
+  </main>
+
+  <footer class="site-footer"><p>JobTrack â€“ Smart Job Application Tracker</p><p>Built with HTML, CSS, JavaScript, Spring Boot &amp; MySQL</p></footer>
+  <script src="js/app.js" defer></script>
+</body>
+</html>

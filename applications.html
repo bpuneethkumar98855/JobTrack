@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+<meta name="description" content="Search and manage all your job applications in JobTrack.">
+  <title>Applications | JobTrack</title>
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-logo" href="index.html" aria-label="JobTrack home">JobTrack</a>
+    <nav class="primary-navigation" aria-label="Main navigation"><ul>
+      <li><a href="index.html">Dashboard</a></li><li><a href="applications.html" aria-current="page">Applications</a></li><li><a href="add-application.html">Add Application</a></li>
+    </ul></nav>
+  </header>
+
+  <main id="main-content">
+    <header class="page-heading"><h1>Applications</h1><a href="add-application.html">Add Application</a></header>
+
+    <section id="application-search" aria-labelledby="search-heading">
+      <h2 id="search-heading">Search Applications</h2>
+      <form id="application-search-form" action="applications.html" method="get">
+        <label for="application-search-query">Search by company name</label>
+        <input id="application-search-query" name="search" type="search" placeholder="Company name">
+        <button type="submit">Search</button>
+      </form>
+    </section>
+
+    <section id="application-filters" aria-labelledby="filters-heading">
+      <h2 id="filters-heading">Filter Applications</h2>
+      <form id="application-filter-form" action="applications.html" method="get">
+        <label for="filter-status">Status</label>
+        <select id="filter-status" name="status"><option value="">All statuses</option><option value="applied">Applied</option><option value="shortlisted">Shortlisted</option><option value="online-assessment">Online Assessment</option><option value="coding-test">Coding Test</option><option value="technical-interview">Technical Interview</option><option value="hr-interview">HR Interview</option><option value="offer">Offer</option><option value="rejected">Rejected</option><option value="withdrawn">Withdrawn</option></select>
+        <label for="filter-source">Job portal/source</label>
+        <select id="filter-source" name="source"><option value="">All sources</option><option value="naukri">Naukri</option><option value="linkedin">LinkedIn</option><option value="indeed">Indeed</option><option value="internshala">Internshala</option><option value="company-website">Company Website</option><option value="other">Other</option></select>
+        <label for="filter-location">Location</label><input id="filter-location" name="location" type="text" placeholder="Any location">
+        <label for="filter-application-date">Application date</label><input id="filter-application-date" name="applicationDate" type="date">
+        <button type="submit">Apply Filters</button>
+        <a id="clear-filters" href="applications.html">Clear filters</a>
+      </form>
+    </section>
+
+    <section id="applications-results" aria-labelledby="applications-results-heading">
+      <h2 id="applications-results-heading">All Applications</h2>
+      <p id="applications-empty-state" class="empty-state" hidden>No applications found.</p>
+      <div class="table-container">
+        <table id="applications-table">
+          <caption>Your job applications</caption>
+          <thead><tr><th scope="col">Company</th><th scope="col">Job Role</th><th scope="col">Location</th><th scope="col">Source</th><th scope="col">Status</th><th scope="col">Application Date</th><th scope="col">Interview Date</th><th scope="col">Actions</th></tr></thead>
+          <tbody id="applications-list"><!-- Application rows are populated from the API. --></tbody>
+        </table>
+      </div>
+    </section>
+
+    <nav id="applications-pagination" class="pagination" aria-label="Applications pages">
+      <a id="previous-page" href="?page=1" aria-label="Previous page">Previous</a>
+      <span id="pagination-current-page" aria-current="page">Page 1</span>
+      <a id="next-page" href="?page=2" aria-label="Next page">Next</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer"><p>JobTrack â€“ Smart Job Application Tracker</p><p>Built with HTML, CSS, JavaScript, Spring Boot &amp; MySQL</p></footer>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
